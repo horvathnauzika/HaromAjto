@@ -5,11 +5,9 @@ Három ajtó
 A program menete:
 
 - User kiválasztja melyiket nyitja ki
-  |
-  V
+
 - Feljön az opció hogy szeretne e cserélni
-  |
-  V
+
 - Eredmény (gép mutatja mi van a másik kettő mögött is)
 
 Lehet újrakezdeni (más sorrendbe keveri az ajtókat)
