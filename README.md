@@ -27,4 +27,5 @@ Példa:
 
 (Minél kevesebb infót írunk ki a statisztikába annál átláthatóbb)
 
-![terv](https://github.com/user-attachments/assets/57352d9c-e37d-41c6-aaa5-8c0085f219db)
+![terv](https://github.com/user-attachments/assets/38c0d3d8-d09a-4694-ad68-84eb780e0f60)
+
