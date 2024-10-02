@@ -4,13 +4,13 @@ Három ajtó
 
 A program menete:
 
-- User kiválasztja melyiket szeretné kinyitni
+1. User kiválasztja melyiket szeretné kinyitni
 
-- Egyet megmutat a másik kettőből ami mögött nincs kincs
+2. Egyet megmutat a másik kettőből ami mögött nincs kincs
 
-- User választhat marad e azon az ajtón vagy a maradék 1-et nyitja ki (Csere)
+3. User választhat marad e azon az ajtón vagy a maradék 1-et nyitja ki (Csere)
 
-- Ezután számoljuk megkapta e a kincset vagy se
+4. Ezután számoljuk megkapta e a kincset vagy se
 
 Lehet újrakezdeni (más sorrendbe keveri az ajtókat)
 
@@ -19,11 +19,11 @@ Hány játék, ebből hány:
 - Cseréléssel
 - Cserélés nélkül
 
-Pl: 
->10 játék
->nyert 4 cserés játékot
->nyert 2 nem cserés játékot
->A cserés effektívebbnek bizonyult
+Példa: 
+10 játék
+- nyert 4 cserés játékot
+- nyert 2 nem cserés játékot
+- A cserés effektívebbnek bizonyult
 
 (Minél kevesebb infót írunk ki a statisztikába annál átláthatóbb)
 
