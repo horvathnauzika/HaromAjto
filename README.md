@@ -20,10 +20,10 @@ Hány játék, ebből hány:
 - Cserélés nélkül
 
 Pl: 
-10 játék
-nyert 4 cserés játékot
-nyert 2 nem cserés játékot
-A cserés effektívebbnek bizonyult
+>10 játék
+>nyert 4 cserés játékot
+>nyert 2 nem cserés játékot
+>A cserés effektívebbnek bizonyult
 
 (Minél kevesebb infót írunk ki a statisztikába annál átláthatóbb)
 
