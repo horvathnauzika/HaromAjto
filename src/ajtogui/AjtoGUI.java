@@ -24,36 +24,12 @@ public class AjtoGUI extends javax.swing.JFrame {
     public AjtoGUI() {
         initComponents();
         kincsElhelyezese();
-        
     }
     
     private void kincsElhelyezese() {
         random = new Random();
         kincsAjto = random.nextInt(3); // Véletlen ajtó index (0, 1 vagy 2)
     }
-    
-    private void kattUtanFelugro(int valasztottAjto) {
-    String segitseg = "";
-    
-    for (int i = 0; i < 3; i++) {
-        if (i != valasztottAjto && i != kincsAjto) {
-            segitseg = "Ajtó " + (i + 1) + " mögött nincs kincs.";
-            break;
-        }
-    }
-
-    // Felugró ablak az üzenettel
-    int valasztas = JOptionPane.showOptionDialog(this, segitseg + "\nVálassz egy ajtót!", "Ajtó kiválasztás", 
-            JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, 
-            new String[] {"Ajtó 1", "Ajtó 2", "Ajtó 3"}, null);
-
-    // Ellenőrizd a választást
-    if (valasztas == valasztottAjto) {
-        JOptionPane.showMessageDialog(this, "Ajtó " + (valasztottAjto + 1) + " mögött: 100 arany!");
-    } else{
-        JOptionPane.showMessageDialog(this, "Ajtó " + (valasztottAjto + 1) + " mögött: üres!");
-    }
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -185,18 +161,27 @@ public class AjtoGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        int valasztottAjto = 1;
-        kattUtanFelugro(valasztottAjto);
+        if (kincsAjto == 0) {
+            JOptionPane.showMessageDialog(this, "Ajtó 1 mögött: 100 arany!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ajtó 1 mögött: üres!");
+        }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        int valasztottAjto = 2;
-        kattUtanFelugro(valasztottAjto);
+        if (kincsAjto == 1) {
+            JOptionPane.showMessageDialog(this, "Ajtó 2 mögött: 100 arany!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ajtó 2 mögött: üres!");
+        }
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        int valasztottAjto = 3;
-        kattUtanFelugro(valasztottAjto);
+        if (kincsAjto == 2) {
+            JOptionPane.showMessageDialog(this, "Ajtó 3 mögött: 100 arany!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ajtó 3 mögött: üres!");
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
