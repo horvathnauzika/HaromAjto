@@ -4,18 +4,56 @@
  */
 package ajtogui;
 
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SimonGergő(SZF_2023_
  */
 public class AjtoGUI extends javax.swing.JFrame {
+    private int kincsAjto;
+    private Random random;
+
+
+
 
     /**
      * Creates new form AjtoGUI
      */
     public AjtoGUI() {
         initComponents();
+        kincsElhelyezese();
+        
     }
+    
+    private void kincsElhelyezese() {
+        random = new Random();
+        kincsAjto = random.nextInt(3); // Véletlen ajtó index (0, 1 vagy 2)
+    }
+    
+    private void kattUtanFelugro(int valasztottAjto) {
+    String segitseg = "";
+    
+    for (int i = 0; i < 3; i++) {
+        if (i != valasztottAjto && i != kincsAjto) {
+            segitseg = "Ajtó " + (i + 1) + " mögött nincs kincs.";
+            break;
+        }
+    }
+
+    // Felugró ablak az üzenettel
+    int valasztas = JOptionPane.showOptionDialog(this, segitseg + "\nVálassz egy ajtót!", "Ajtó kiválasztás", 
+            JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, 
+            new String[] {"Ajtó 1", "Ajtó 2", "Ajtó 3"}, null);
+
+    // Ellenőrizd a választást
+    if (valasztas == valasztottAjto) {
+        JOptionPane.showMessageDialog(this, "Ajtó " + (valasztottAjto + 1) + " mögött: 100 arany!");
+    } else{
+        JOptionPane.showMessageDialog(this, "Ajtó " + (valasztottAjto + 1) + " mögött: üres!");
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,11 +78,23 @@ public class AjtoGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\simon\\Desktop\\hw\\HaromAjto\\build\\classes\\door.png")); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\simon\\Desktop\\hw\\HaromAjto\\build\\classes\\door.png")); // NOI18N
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\simon\\Desktop\\hw\\HaromAjto\\build\\classes\\door.png")); // NOI18N
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -134,10 +184,26 @@ public class AjtoGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        int valasztottAjto = 1;
+        kattUtanFelugro(valasztottAjto);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        int valasztottAjto = 2;
+        kattUtanFelugro(valasztottAjto);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        int valasztottAjto = 3;
+        kattUtanFelugro(valasztottAjto);
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+     
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
